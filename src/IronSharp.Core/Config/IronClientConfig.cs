@@ -19,6 +19,12 @@ namespace IronSharp.Core
         [JsonProperty("api_version", DefaultValueHandling = DefaultValueHandling.Ignore )]
         public int? ApiVersion { get; set; }
 
+        [JsonProperty("scheme")]
+        public string Scheme { get; set; }
+
+        [JsonProperty("port", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public int? Port { get; set; }
+
         [JsonProperty("sharp_config")]
         public IronSharpConfig SharpConfig
         {

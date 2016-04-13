@@ -36,8 +36,9 @@ namespace IronSharp.Core
             }
 
             string queryString = BuildQueryString(query);
+            int port = config.Port.HasValue ? config.Port.GetValueOrDefault(8080) : 8080;
 
-            var uriBuilder = new UriBuilder(Uri.UriSchemeHttps, config.Host)
+            var uriBuilder = new UriBuilder(config.Scheme.ToLower() == "http" ? Uri.UriSchemeHttp : Uri.UriSchemeHttps, config.Host, port)
             {
                 Path = String.Format("{0}/{1}", config.ApiVersion, path.Replace("{Project ID}", config.ProjectId)),
                 Query = queryString

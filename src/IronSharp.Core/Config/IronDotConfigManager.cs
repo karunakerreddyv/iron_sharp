@@ -124,6 +124,8 @@ namespace IronSharp.Core
             targetConfig.Token = string.IsNullOrEmpty(overrideConfig.Token) ? targetConfig.Token : overrideConfig.Token;
             targetConfig.Host = string.IsNullOrEmpty(overrideConfig.Host) ? targetConfig.Host : overrideConfig.Host;
             targetConfig.ApiVersion = overrideConfig.ApiVersion.HasValue ? overrideConfig.ApiVersion : targetConfig.ApiVersion;
+            targetConfig.Scheme = string.IsNullOrEmpty(overrideConfig.Scheme) ? targetConfig.Scheme : overrideConfig.Scheme;
+            targetConfig.Port = overrideConfig.Port.HasValue ? overrideConfig.Port : targetConfig.Port;
         }
         private static string GetAppDirectory()
         {
